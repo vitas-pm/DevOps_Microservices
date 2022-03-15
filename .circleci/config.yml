@@ -10,6 +10,10 @@ jobs:
     working_directory: project-ml-microservice-kubernetes
     steps:
       - checkout
+      - run:
+          name: show directory
+          command: |
+            ls -a
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "requirements.txt" }}
