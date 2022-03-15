@@ -13,7 +13,7 @@ jobs:
       - run:
           name: show directory
           command: |
-            cd project-ml-microservice-kubernetes
+            cd ..
             ls -a
       - restore_cache:
           keys:
