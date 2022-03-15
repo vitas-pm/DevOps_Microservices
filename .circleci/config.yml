@@ -13,6 +13,8 @@ jobs:
       - run:
           name: show directory
           command: |
+            pwd
+            ls -a
             cd ..
             ls -a
       - restore_cache:
