@@ -5,11 +5,15 @@
 
 # Step 1:
 # Create dockerpath
-# dockerpath=<your docker ID/path>
+dockerpath=vitaspm/price_predictor
+version=v0.1
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
+cat docker_pw.txt | docker login --username vitaspm --password-stdin
+docker tag price_predictor:latest $dockerpath:$version
 
 # Step 3:
 # Push image to a docker repository
+docker image push $dockerpath:$version
